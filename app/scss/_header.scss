@@ -1,0 +1,147 @@
+.header {
+  nav {
+    height: 4rem;
+    // position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: $white;
+    z-index: 1000000;
+
+    @include breakpoints-up(large) {
+      height: 5rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      background: $white;
+      z-index: 5;
+    }
+  }
+
+  &__logo {
+    height: 1.25rem;
+  }
+
+  &__logo-text {
+    font-family: "Oxygen Mono", monospace;
+    color: black;
+  }
+
+  // img {
+  // }
+  &__btn {
+    //mobile menu button
+    > span {
+      display: block;
+      position: relative;
+      width: 22px;
+      height: 2px;
+      background-color: $darkBlue;
+      transition: all 0.3s ease-in-out;
+
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+    &.open {
+      span:first-child {
+        transform: rotate(-45deg) translate(-2px, 5px);
+      }
+
+      span:nth-child(2) {
+        transform: translateX(-56px);
+        background: transparent;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(45deg) translate(-3px, -7px);
+      }
+    }
+  }
+
+  &__links {
+    // @include breakpoints-down(medium) {
+    //   position: absolute;
+    //   top: 80px;
+    // }
+
+    @include breakpoints-up(large) {
+      > a {
+        font-size: $font-sm;
+        position: relative;
+        font-weight: 400;
+        color: $grayishBlue;
+        margin-right: 2rem;
+        transition: ease-in-out 200ms;
+        opacity: 1;
+        visibility: visible;
+
+        &::after {
+          content: "";
+          width: 100%;
+          height: 4px;
+          background: linear-gradient(to right, $limeGreen, $brightCyan);
+          cursor: pointer;
+          position: absolute;
+          bottom: -31px;
+          left: 0;
+          opacity: 0;
+          transition: opacity 200ms ease-in-out;
+        }
+        &:hover {
+          color: $darkBlue;
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__menu {
+    @include breakpoints-down(medium) {
+      position: absolute;
+      top: 5rem;
+      width: 90%;
+      padding: 1.625rem;
+      // height: 266px;
+      background: $white;
+      border-radius: 5px;
+      z-index: 3;
+      opacity: 0;
+
+      > a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        font-size: $font-med;
+        color: $darkBlue;
+        font-weight: bold;
+        padding: 0.625rem;
+      }
+
+      .fade-out {
+        a {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.overlay {
+  // display: block;
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient($grayishBlue, transparent);
+  opacity: 0;
+  z-index: 2;
+}

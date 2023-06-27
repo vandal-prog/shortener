@@ -1,0 +1,22 @@
+{
+  "name": "shortener",
+  "version": "1.0.0",
+  "description": "Shortener page",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass app/scss/style.scss dist/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gideon-cyber/shortener.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gideon-cyber/shortener/issues"
+  },
+  "homepage": "https://github.com/Gideon-cyber/shortener#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

@@ -1,0 +1,67 @@
+.fade-in {
+  animation: fade-in 300ms ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.fade-out {
+  animation: fade-out 300ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.slide-right {
+  animation: slide-right 1s linear forwards;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translate(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+}
+
+.enlarge {
+  @include breakpoints-up(large) {
+    &::after {
+      animation: enlarge 2.5s 1s 2 ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes enlarge {
+  0% {
+    background-size: 89%;
+  }
+
+  50% {
+    background-size: 100%;
+  }
+
+  100% {
+    background-size: 89%;
+  }
+}

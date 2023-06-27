@@ -1,0 +1,123 @@
+.footer {
+  background-color: $darkBlue;
+  color: $white;
+  padding-top: 2.5rem;
+  padding-bottom: 2.8125rem;
+  text-align: center;
+
+  @include breakpoints-up(large) {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "logo links1 links2 cta"
+      "social links1 links2 cta";
+    justify-items: start;
+    padding-top: 3rem;
+    padding-bottom: 2.6875rem;
+  }
+
+  a {
+    color: $white;
+    font-size: $font-sm;
+    font-weight: 400;
+  }
+
+  &__logo {
+    margin-bottom: 1.875rem;
+    display: inline-block;
+
+    @include breakpoints-up(large) {
+      grid-area: logo;
+    }
+  }
+
+  &__logo-text {
+    font-family: "Oxygen Mono", monospace;
+    color: black;
+    font-size: $font-xl;
+  }
+
+  &__social {
+    margin-bottom: 2.375rem;
+
+    @include breakpoints-up(large) {
+      grid-area: social;
+      //   align-self: end;
+      margin-top: 1.5625rem;
+      margin-bottom: 0;
+    }
+
+    a {
+      display: inline-block;
+
+      svg path {
+        transition: fill 150ms ease-in-out;
+      }
+
+      &:hover {
+        svg path {
+          fill: $limeGreen;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2.125rem;
+
+    @include breakpoints-up(large) {
+      align-items: start;
+      //   margin-left: 4.375rem;
+    }
+
+    &.col1 {
+      @include breakpoints-up(large) {
+        grid-area: links1;
+      }
+    }
+
+    &.col2 {
+      margin-bottom: 2.25rem;
+
+      @include breakpoints-up(large) {
+        grid-area: links2;
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      transition: color 200ms ease-in-out;
+
+      &:hover {
+        color: $limeGreen;
+      }
+    }
+  }
+
+  &__cta {
+    @include breakpoints-up(large) {
+      grid-area: cta;
+      text-align: right;
+      justify-self: end;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 1.875rem;
+    }
+  }
+
+  &__copyright {
+    font-size: $font-sm;
+    color: $grayishBlue;
+    font-weight: 400;
+  }
+}
