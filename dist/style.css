@@ -370,6 +370,10 @@ button:hover::after,
 .hero {
   background: hsl(0, 0%, 98%);
   min-height: 100vh;
+  background-image: url("/images/07.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 @media (min-width: 64em) {
   .hero {
@@ -413,6 +417,7 @@ button:hover::after,
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1.25rem;
+  background: #fff;
 }
 .hero__text_box a {
   display: -webkit-box;
