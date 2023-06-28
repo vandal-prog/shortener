@@ -583,6 +583,7 @@ button:hover::after,
   background-color: #144ee3;
   color: hsl(0, 0%, 100%);
   padding: 1rem;
+  cursor: pointer;
   height: 100%;
 }
 

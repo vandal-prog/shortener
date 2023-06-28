@@ -6,6 +6,7 @@ const modalCloseBtn = document.getElementById("hero__modal_close");
 const modal = document.querySelector(".hero__modal");
 const modalLink = document.querySelector(".hero__modal_link");
 const heroInput = document.getElementById("hero__input");
+const copyBtn = document.querySelector(".hero__modal_copy");
 let menuOpen = false;
 let modalOpen = false;
 
@@ -65,15 +66,19 @@ async function fetchData(url) {
 
 heroButton.addEventListener("click", function (e) {
   e.preventDefault();
-  if (!modalOpen) {
-    modal.classList.remove("hidden");
-    fetchData(heroInput.value);
-
-    // modalLink.textContent = heroInput.value;
-    modalOpen = true;
+  if (!heroInput.value) {
+    alert("add a link so we can shorten-it");
   } else {
-    modal.classList.add("hidden");
-    modalOpen = false;
+    if (!modalOpen) {
+      modal.classList.remove("hidden");
+      fetchData(heroInput.value);
+
+      // modalLink.textContent = heroInput.value;
+      modalOpen = true;
+    } else {
+      modal.classList.add("hidden");
+      modalOpen = false;
+    }
   }
 });
 
@@ -85,4 +90,9 @@ modalCloseBtn.addEventListener("click", function () {
     modal.classList.remove("hidden");
     modalOpen = true;
   }
+});
+
+copyBtn.addEventListener("click", function () {
+  navigator.clipboard.writeText(modalLink.textContent);
+  alert("Copied the text: " + modalLink.textContent);
 });
