@@ -73,13 +73,37 @@
 
       <div class="hero__text padding-lr" data-aos="fade-up">
         <div class="hero__text_box">
-          <label> Enter your long Url here </label>
-          <input type="text" />
-          <a href="" class="button hero__text_box__button">Shorten-It</a>
+          <h1>Shorten Your Loooong Links :)</h1>
+          <span
+            >Shorten-It is an efficient and easy-to-use URL shortening service
+            that streamlines your online experience.</span
+          >
+          <div class="hero__text_input">
+            <input type="text" placeholder="Enter the link here" />
+            <a href="" class="button hero__text_box__button" id="button__hero"
+              >Shorten-It</a
+            >
+          </div>
         </div>
       </div>
 
-      <div class="hero__pic">This is a picture</div>
+      <!-- This is the modal that shows the new shortened url -->
+      <div class="hero__modal hidden">
+        <div class="hero__modal_box">
+          <div class="hero__modal_header">
+            <span>Your Shorten-it link</span>
+            <img
+              src="/images/icon-close.svg"
+              alt="close icon"
+              id="hero__modal_close"
+            />
+          </div>
+          <div class="hero__modal_text">
+            <div class="hero__modal_link">https://bit.ly/ddd</div>
+            <div class="hero__modal_copy">Copy</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer class="footer padding-lr">
@@ -159,5 +183,28 @@
     </script>
 
     <script src="/app/js/script.js"></script>
+    <script>
+      async function fetchData() {
+        try {
+          const request = await fetch("https://api-ssl.bitly.com/v4/shorten", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer a91f1024ddbf26b399ae08e9e80e95676f78ec33`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              long_url: "https://gid-portfolio.vercel.app",
+              domain: "gid.ly",
+              // group_guid: "gidtalker",
+            }),
+          });
+          console.log(request);
+        } catch (error) {
+          console.log("Error", error);
+        }
+      }
+
+      // fetchData();
+    </script>
   </body>
 </html>

@@ -13,11 +13,11 @@ body {
   padding: 0;
   margin: 0;
   font-size: $font-med;
-  color: $grayishBlue;
   line-height: 1.3;
   font-weight: 300;
   font-family: "Public Sans", sans-serif;
   overflow-x: hidden;
+  background-color: $darkBlue;
 }
 
 h1,
@@ -62,7 +62,8 @@ a:hover {
 button,
 .button {
   padding: 0.85rem 2.125rem;
-  background: linear-gradient(to right, $limeGreen, $brightCyan);
+  // background: linear-gradient(to right, $limeGreen, $brightCyan);
+  background-color: $lightBlue;
   border: 0;
   font-weight: 700;
   font-size: $font-sm;

@@ -1,7 +1,11 @@
 const menuBtn = document.querySelector(".header__btn");
 const overlay = document.querySelector(".overlay");
 const headerMenu = document.querySelector(".header__menu");
+const heroButton = document.getElementById("button__hero");
+const modalCloseBtn = document.getElementById("hero__modal_close");
+const modal = document.querySelector(".hero__modal");
 let menuOpen = false;
+let modalOpen = false;
 
 menuBtn.addEventListener("click", function () {
   if (!menuOpen) {
@@ -33,4 +37,25 @@ overlay.addEventListener("click", function () {
   headerMenu.classList.remove("fade-in");
   headerMenu.classList.add("fade-out");
   menuOpen = false;
+});
+
+heroButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (!modalOpen) {
+    modal.classList.remove("hidden");
+    modalOpen = true;
+  } else {
+    modal.classList.add("hidden");
+    modalOpen = false;
+  }
+});
+
+modalCloseBtn.addEventListener("click", function () {
+  if (modalOpen) {
+    modal.classList.add("hidden");
+    modalOpen = false;
+  } else {
+    modal.classList.remove("hidden");
+    modalOpen = true;
+  }
 });
