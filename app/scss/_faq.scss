@@ -1,0 +1,30 @@
+.faq {
+  width: 100%;
+  min-height: 100vh;
+
+  h2 {
+    color: $white;
+    font-size: 2.3125rem;
+    // line-height: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.375rem;
+    backface-visibility: hidden;
+    text-align: center;
+
+    @include breakpoints-up(large) {
+      font-size: $font-xl;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    width: 100%;
+
+    @include breakpoints-up(large) {
+      width: 70%;
+    }
+  }
+}

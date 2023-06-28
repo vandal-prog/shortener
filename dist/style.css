@@ -560,6 +560,7 @@ button:hover::after,
   width: 70%;
   color: #144ee3;
   padding: 1rem;
+  font-size: 0.875rem;
 }
 .hero__modal_copy {
   background-color: #144ee3;
@@ -678,4 +679,41 @@ button:hover::after,
   font-size: 0.875rem;
   color: hsl(233, 8%, 62%);
   font-weight: 400;
+}
+
+.faq {
+  width: 100%;
+  min-height: 100vh;
+}
+.faq h2 {
+  color: hsl(0, 0%, 100%);
+  font-size: 2.3125rem;
+  font-weight: 600;
+  margin-bottom: 1.375rem;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  text-align: center;
+}
+@media (min-width: 64em) {
+  .faq h2 {
+    font-size: 3.25rem;
+  }
+}
+.faq__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.2rem;
+  width: 100%;
+}
+@media (min-width: 64em) {
+  .faq__box {
+    width: 70%;
+  }
 }/*# sourceMappingURL=style.css.map */

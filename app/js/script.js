@@ -4,6 +4,8 @@ const headerMenu = document.querySelector(".header__menu");
 const heroButton = document.getElementById("button__hero");
 const modalCloseBtn = document.getElementById("hero__modal_close");
 const modal = document.querySelector(".hero__modal");
+const modalLink = document.querySelector(".hero__modal_link");
+const heroInput = document.getElementById("hero__input");
 let menuOpen = false;
 let modalOpen = false;
 
@@ -39,10 +41,35 @@ overlay.addEventListener("click", function () {
   menuOpen = false;
 });
 
+async function fetchData(url) {
+  try {
+    const request = await fetch("https://api-ssl.bitly.com/v4/shorten", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer a91f1024ddbf26b399ae08e9e80e95676f78ec33`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        long_url: url,
+        // domain: "gid.ly",
+        // group_guid: "gidtalker",
+      }),
+    });
+    console.log(request);
+    const response = await request.json();
+    modalLink.textContent = response.link;
+  } catch (error) {
+    console.log("Error", error);
+  }
+}
+
 heroButton.addEventListener("click", function (e) {
   e.preventDefault();
   if (!modalOpen) {
     modal.classList.remove("hidden");
+    fetchData(heroInput.value);
+
+    // modalLink.textContent = heroInput.value;
     modalOpen = true;
   } else {
     modal.classList.add("hidden");

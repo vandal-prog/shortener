@@ -55,15 +55,15 @@
           <span></span>
         </a>
 
-        <!-- <div class="header__links header__menu">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+        <div class="header__links header__menu">
+          <a href="#">Shorten-link</a>
+          <a href="#">Faq</a>
+          <!-- <a href="#">Contact</a>
           <a href="#">Blog</a>
-          <a href="#">Careers</a>
-        </div> -->
+          <a href="#">Careers</a> -->
+        </div>
 
-        <a href="#" class="button hide-for-mobile">Log in</a>
+        <!-- <a href="#" class="button hide-for-mobile">Log in</a> -->
       </nav>
       <div class="overlay hide-for-desktop"></div>
     </header>
@@ -79,7 +79,11 @@
             that streamlines your online experience.</span
           >
           <div class="hero__text_input">
-            <input type="text" placeholder="Enter the link here" />
+            <input
+              type="text"
+              placeholder="Enter the link here"
+              id="hero__input"
+            />
             <a href="" class="button hero__text_box__button" id="button__hero"
               >Shorten-It</a
             >
@@ -103,6 +107,14 @@
             <div class="hero__modal_copy">Copy</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!--Faq section-->
+    <section class="faq padding-lr">
+      <h2>FAQ</h2>
+      <div class="faq__box">
+        <div class="faq__question"></div>
       </div>
     </section>
 
@@ -184,26 +196,6 @@
 
     <script src="/app/js/script.js"></script>
     <script>
-      async function fetchData() {
-        try {
-          const request = await fetch("https://api-ssl.bitly.com/v4/shorten", {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer a91f1024ddbf26b399ae08e9e80e95676f78ec33`,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              long_url: "https://gid-portfolio.vercel.app",
-              domain: "gid.ly",
-              // group_guid: "gidtalker",
-            }),
-          });
-          console.log(request);
-        } catch (error) {
-          console.log("Error", error);
-        }
-      }
-
       // fetchData();
     </script>
   </body>
