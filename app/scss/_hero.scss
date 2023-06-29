@@ -120,6 +120,7 @@
     &_input {
       position: relative;
       width: 609px;
+      z-index: 1;
 
       @include breakpoints-down(large) {
         width: 100%;

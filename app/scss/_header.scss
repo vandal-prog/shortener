@@ -3,14 +3,15 @@
   top: 0;
   right: 0;
   left: 0;
+  z-index: 4;
 
   nav {
     height: 4rem;
     // position: absolute;
+    background: $darkBlue;
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1000000;
 
     @include breakpoints-up(large) {
       height: 5rem;
@@ -95,7 +96,7 @@
           transition: opacity 200ms ease-in-out;
         }
         &:hover {
-          color: $darkBlue;
+          color: $white;
 
           &::after {
             opacity: 1;
