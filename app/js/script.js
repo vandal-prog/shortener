@@ -57,7 +57,7 @@ async function fetchData(url) {
     const request = await fetch("https://api-ssl.bitly.com/v4/shorten", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${key}`,
+        Authorization: `Bearer 5e82650ef3e235b65bcacaffa2ae1fcce9a3d7da`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
