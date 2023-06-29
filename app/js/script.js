@@ -50,12 +50,14 @@ menuBtn.addEventListener("click", function () {
 //   menuOpen = false;
 // });
 
+const key = "<%= process.env.SECRET_KEY %>";
+
 async function fetchData(url) {
   try {
     const request = await fetch("https://api-ssl.bitly.com/v4/shorten", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.SECRET_KEY}`,
+        Authorization: `Bearer ${key}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
