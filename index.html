@@ -28,6 +28,12 @@
     <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <!-- Animate css library-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
     <title>Shortener</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -74,7 +80,7 @@
       <div class="hero__text padding-lr">
         <div class="hero__text_box">
           <h1>Shorten Your Loooong Links :)</h1>
-          <span
+          <span class="hero_text_box_span"
             >Shorten-It is an efficient and easy-to-use URL shortening service
             that streamlines your online experience.</span
           >
@@ -93,7 +99,14 @@
 
       <!-- This is the modal that shows the new shortened url -->
       <div class="hero__modal hidden">
-        <div class="hero__modal_box">
+        <div class="hero__animation hidden">
+          <h2
+            class="animate__animated animate__bounce animate__infinite infinite"
+          >
+            Shorten-It...
+          </h2>
+        </div>
+        <div class="hero__modal_box hidden">
           <div class="hero__modal_header">
             <span>Your Shorten-it link</span>
             <img

@@ -506,7 +506,7 @@ button:hover::after,
   position: absolute;
   left: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 1000;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -518,6 +518,10 @@ button:hover::after,
       -ms-flex-pack: center;
           justify-content: center;
   padding: 1rem;
+}
+.hero__modal h2 {
+  font-size: 3.25rem;
+  color: hsl(0, 0%, 100%);
 }
 .hero__modal.hidden {
   display: none;
@@ -537,6 +541,9 @@ button:hover::after,
           flex-direction: column;
   padding: 20px;
   min-width: 400px;
+}
+.hero__modal_box.hidden {
+  display: none;
 }
 @media (max-width: 89.9375em) {
   .hero__modal_box {
@@ -588,6 +595,9 @@ button:hover::after,
   padding: 1rem;
   cursor: pointer;
   height: 100%;
+}
+.hero__animation.hidden {
+  display: none;
 }
 
 .footer {

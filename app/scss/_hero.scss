@@ -168,12 +168,17 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
+
+    h2 {
+      font-size: $font-xl;
+      color: $white;
+    }
 
     &.hidden {
       display: none;
@@ -187,6 +192,10 @@
       flex-direction: column;
       padding: 20px;
       min-width: 400px;
+
+      &.hidden {
+        display: none;
+      }
 
       @include breakpoints-down(large) {
         margin: 10px;
@@ -232,6 +241,12 @@
       padding: 1rem;
       cursor: pointer;
       height: 100%;
+    }
+  }
+
+  &__animation {
+    &.hidden {
+      display: none;
     }
   }
 }
