@@ -9,6 +9,8 @@ const heroInput = document.getElementById("hero__input");
 const copyBtn = document.querySelector(".hero__modal_copy");
 const animationText = document.querySelector(".hero__animation");
 const modalBox = document.querySelector(".hero__modal_box");
+const modalHeader = document.querySelector(".hero__modal_header");
+const modalText = document.querySelector(".hero__modal_text");
 const heroSpanText = document.querySelector(".hero_text_box_span");
 const heroTextInput = document.querySelector(".hero__text_input");
 
@@ -81,12 +83,14 @@ heroButton.addEventListener("click", function (e) {
   } else {
     if (!modalOpen) {
       modal.classList.remove("hidden");
+      modalBox.classList.remove("hidden");
       animationText.classList.remove("hidden");
       fetchData(heroInput.value);
 
       setTimeout(() => {
         animationText.classList.add("hidden");
-        modalBox.classList.remove("hidden");
+        modalText.classList.remove("hidden");
+        modalHeader.classList.remove("hidden");
       }, 5000);
 
       // modalLink.textContent = heroInput.value;

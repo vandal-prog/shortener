@@ -435,6 +435,9 @@ button:hover::after,
   justify-content: space-between;
   width: 100%;
 }
+.hero__modal_header.hidden {
+  display: none;
+}
 .hero__modal_header span {
   font-size: 1.125rem;
 }
@@ -448,6 +451,9 @@ button:hover::after,
   overflow: hidden;
   box-shadow: 1px 2px 1px #000;
   margin-top: 20px;
+}
+.hero__modal_text.hidden {
+  display: none;
 }
 .hero__modal_link {
   background: hsl(0, 0%, 100%);
