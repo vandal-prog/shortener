@@ -301,6 +301,7 @@ button:hover::after,
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 3rem;
 }
 @media (min-width: 64em) {
   .hero {
